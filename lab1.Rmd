@@ -11,6 +11,7 @@ Demonstrate how to make changes
 
 ```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+library(tidyverse)
 ```
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code.
@@ -34,7 +35,7 @@ The following illustrate commands for exploring this exercise using R and variou
 ### Libraries
 
 Try to load the `ISLR` library
-```{r}
+```{r Load Library}
 library(ISLR)
 ```
 
@@ -49,12 +50,13 @@ Ready?
 
 Next we will need to load the dataset.  This is part of the library so we will not need to read it in using `read.csv` but rather we will use the `data` function to load it from the library.
 
-```{r data}
+```{r Data}
 data(College)
+view(College)
 ```
 
 This loads the dataframe `College`.  Note you can always see the content of any `R` object by simply typing its name.
-```{r, eval=FALSE}
+```{r Load Dataframe, eval=FALSE}
 College
 ```
 
@@ -71,7 +73,7 @@ To see explore the data, you can use the command `View(College)`.
 This will open a new tab, where you may scroll left and right to look at the rows and columns.
 In the `View` you should see that the first column is the College/University name.  These can be extracted using `rownames(College)`.  Let's print out the first 5
 
-```{r}
+```{r Row Names}
 rownames(College)[1:5]
 ```
 
@@ -79,7 +81,7 @@ rownames(College)[1:5]
 
 ### Summary
 
-```{r}
+```{r Data Summary}
 summary(College)
 ```
 
@@ -88,7 +90,7 @@ summary(College)
 How many observations and variables are in the dataframe?
 
 
-```{r dim, echo=FALSE}
+```{r Dimensions, echo=FALSE}
 d = dim(College)
 d
 ```
